@@ -20,6 +20,7 @@ func TestReverseList(t *testing.T) {
 
 	link = NewLink([]int{1, 2})
 	Print(reverseList(link))
+	fmt.Println()
 	// 2--------
 	link = NewLink([]int{1, 2, 6, 3, 4, 5, 6})
 	Print(reverseList2(link))
@@ -29,6 +30,16 @@ func TestReverseList(t *testing.T) {
 
 	link = NewLink([]int{1, 2})
 	Print(reverseList2(link))
+	fmt.Println()
+	// 3----------------
+	link = NewLink([]int{1, 2, 6, 3, 4, 5, 6})
+	Print(reverseList3(link))
+
+	link = NewLink([]int{1})
+	Print(reverseList3(link))
+
+	link = NewLink([]int{1, 2})
+	Print(reverseList3(link))
 }
 
 func TestSwapPairs(t *testing.T) {
@@ -137,4 +148,86 @@ func TestHasCycle(t *testing.T) {
 
 	link = NewLink([]int{1, 2})
 	fmt.Println(hasCycle(link))
+}
+
+func TestMiddleNode(t *testing.T) {
+	var link *ListNode
+	link = NewLink([]int{1, 2, 3, 4, 5, 6, 7})
+	fmt.Println(middleNode(link))
+
+	link = NewLink([]int{1, 2, 3, 4})
+	fmt.Println(middleNode(link))
+
+	link = NewLink([]int{1})
+	fmt.Println(middleNode(link))
+}
+
+func TestDeleteDuplicates(t *testing.T) {
+	var link *ListNode
+	link = NewLink([]int{1, 2, 3, 3, 3, 4, 5, 6, 6, 7})
+	Print(deleteDuplicates(link))
+
+	link = NewLink([]int{1, 1, 2})
+	Print(deleteDuplicates(link))
+
+	link = NewLink([]int{1, 1, 2, 3, 3})
+	Print(deleteDuplicates(link))
+
+	link = NewLink([]int{1, 2, 3})
+	Print(deleteDuplicates(link))
+
+	link = NewLink([]int{1, 1, 1})
+	Print(deleteDuplicates(link))
+}
+
+func TestIsPalindrome(t *testing.T) {
+	var link *ListNode
+	link = NewLink([]int{1, 2, 3, 4, 5, 6, 7})
+	fmt.Println(isPalindrome(link))
+
+	link = NewLink([]int{1, 2, 3, 3, 2, 1})
+	fmt.Println(isPalindrome(link))
+
+	link = NewLink([]int{1, 2, 3, 5, 3, 2, 1})
+	fmt.Println(isPalindrome(link))
+
+	link = NewLink([]int{1, 2})
+	fmt.Println(isPalindrome(link))
+}
+
+func TestReverseBetween(t *testing.T) {
+	var link *ListNode
+	link = NewLink([]int{1, 2, 3, 4, 5})
+	Print(reverseBetween(link, 2, 4))
+
+	link = NewLink([]int{1, 2, 3, 4, 5})
+	Print(reverseBetween(link, 1, 3))
+
+	link = NewLink([]int{1})
+	Print(reverseBetween(link, 1, 1))
+
+	link = NewLink([]int{1, 2, 3, 4, 5})
+	Print(reverseBetween(link, 4, 5))
+
+	link = NewLink([]int{1, 2, 3, 4, 5})
+	Print(reverseBetween(link, 1, 5))
+}
+
+func TestReverseKGroup(t *testing.T) {
+	var link *ListNode
+	link = NewLink([]int{1, 2, 3, 4, 5})
+	Print(reverseKGroup(link, 2))
+
+	link = NewLink([]int{1, 2, 3, 4, 5})
+	Print(reverseKGroup(link, 3))
+}
+
+func TestMergeKLists(t *testing.T) {
+	var link1 *ListNode
+	var link2 *ListNode
+	var link3 *ListNode
+	link1 = NewLink([]int{1, 4, 5})
+	link2 = NewLink([]int{1, 3, 4})
+	link3 = NewLink([]int{2, 6})
+	Print(mergeKLists([]*ListNode{link1, link2, link3}))
 }

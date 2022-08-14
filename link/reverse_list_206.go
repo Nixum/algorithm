@@ -12,6 +12,20 @@ func reverseList(head *ListNode) *ListNode {
 	return h.Next
 }
 
+// 区别上面那种写法，无需头节点，直接在原链表上操作
+// 但是会破坏head节点
+func reverseList3(head *ListNode) *ListNode {
+	var pre *ListNode
+	cur := head
+	for cur != nil {
+		next := cur.Next
+		cur.Next = pre
+		pre = cur
+		cur = next
+	}
+	return pre
+}
+
 func reverseList2(head *ListNode) *ListNode {
 	if head == nil || head.Next == nil {
 		return head
