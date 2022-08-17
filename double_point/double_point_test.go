@@ -92,3 +92,14 @@ func TestTwoSum(t *testing.T) {
 	fmt.Println(twoSum([]int{3,2,4}, 6))
 	fmt.Println(twoSum([]int{3,3}, 6))
 }
+
+func TestFourSum(t *testing.T) {
+	fmt.Println(fourSum([]int{1,0,-1,0,-2,2}, 0))
+	fmt.Println(fourSum([]int{2,2,2,2,2}, 8))
+	fmt.Println(fourSum([]int{0,0,0,0,0}, 0))
+}
+
+func TestAdvantageCount(t *testing.T) {
+	fmt.Println(advantageCount([]int{2,7,11,15}, []int{1,10,4,11}))
+	fmt.Println(advantageCount([]int{12,24,8,32}, []int{13,25,32,11}))
+}
