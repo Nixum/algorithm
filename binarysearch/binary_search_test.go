@@ -20,3 +20,9 @@ func TestBinaryInsert(t *testing.T) {
 func TestMySqrt2(t *testing.T) {
 	fmt.Println(MySqrt2(6))
 }
+
+func TestMinEatingSpeed(t *testing.T) {
+	fmt.Println(minEatingSpeed([]int{3,6,7,11}, 8))
+	fmt.Println(minEatingSpeed([]int{30,11,23,4,20}, 5))
+	fmt.Println(minEatingSpeed([]int{30,11,23,4,20}, 6))
+}
