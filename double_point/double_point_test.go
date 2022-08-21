@@ -103,3 +103,7 @@ func TestAdvantageCount(t *testing.T) {
 	fmt.Println(advantageCount([]int{2,7,11,15}, []int{1,10,4,11}))
 	fmt.Println(advantageCount([]int{12,24,8,32}, []int{13,25,32,11}))
 }
+
+func TestReplaceBlank(t *testing.T) {
+	fmt.Println(replaceBlank("We are happy."))
+}

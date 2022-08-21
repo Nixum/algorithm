@@ -26,3 +26,16 @@ func TestMinEatingSpeed(t *testing.T) {
 	fmt.Println(minEatingSpeed([]int{30,11,23,4,20}, 5))
 	fmt.Println(minEatingSpeed([]int{30,11,23,4,20}, 6))
 }
+
+func TestShipWithinDays(t *testing.T) {
+	fmt.Println(shipWithinDays([]int{1,2,3,4,5,6,7,8,9,10}, 5))
+	fmt.Println(shipWithinDays([]int{3,2,2,4,1,4}, 3))
+	fmt.Println(shipWithinDays([]int{1,2,3,1,1}, 4))
+}
+
+func TestPreimageSizeFZF(t *testing.T) {
+	fmt.Println(preimageSizeFZF(0))
+	fmt.Println(preimageSizeFZF(5))
+	fmt.Println(preimageSizeFZF(3))
+	fmt.Println(preimageSizeFZF(1000000000))
+}
