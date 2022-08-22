@@ -34,6 +34,10 @@ func TestRepeatedSubstringPattern(t *testing.T) {
 	fmt.Println(repeatedSubstringPattern2("abab"))
 	fmt.Println(repeatedSubstringPattern2("aba"))
 	fmt.Println(repeatedSubstringPattern2("abcabcabcabc"))
+	fmt.Println()
+	fmt.Println(repeatedSubstringPattern("abab"))
+	fmt.Println(repeatedSubstringPattern("aba"))
+	fmt.Println(repeatedSubstringPattern("abcabcabcabc"))
 }
 
 func TestStrStr(t *testing.T) {

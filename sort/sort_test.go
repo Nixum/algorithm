@@ -15,3 +15,14 @@ func TestQuickSort(t *testing.T) {
 	quickSort(arr)
 	fmt.Println(arr)
 }
+
+func TestHeapSort(t *testing.T) {
+	var arr []int
+	arr = []int{1,3,5,2,6,8,3,5,7,0,9}
+	heapSort(arr)
+	fmt.Println(arr)
+
+	arr = []int{1,3,5,2,6,8,3,5,7,0}
+	heapSort(arr)
+	fmt.Println(arr)
+}
