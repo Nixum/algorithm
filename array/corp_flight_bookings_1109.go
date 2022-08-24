@@ -4,7 +4,8 @@ package array
 // 比如有原数组：8  2 6  3  1，
 //    差分数组：8 -6  4 -3 -2
 //   diff[0] = nums[0]; diff[i] = nums[i] - nums[i - 1]
-// 所以如果要对nums[i..j]的元素都+3，只需 diff[i] += 3, diff[j+1] -= 3 即可
+// 所以如果要对nums[i..j]的元素都+3，只需 diff[i] += 3, diff[j+1] -= 3 即可,
+// 之所以是j+1,是为了复原nums[j+1]的位置，因为nums[j]+3了，需要在diff[j+1]的位置上-3，diff[j + 1] + nums[j] 才能等于nums[j+1]
 // 还原：res[i] = diff[0]; res[i] = res[i - 1] + diff[i]
 func corpFlightBookings(bookings [][]int, n int) []int {
 	diff := make([]int, n + 1)

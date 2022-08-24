@@ -44,3 +44,23 @@ func TestCorpFlightBookings(t *testing.T) {
 	}
 	fmt.Println(corpFlightBookings(bookings, 2))
 }
+
+func TestCarPooling(t *testing.T) {
+	trips := [][]int{
+		{2,1,5},
+		{3,3,7},
+	}
+	fmt.Println(carPooling(trips, 4))
+
+	trips = [][]int{
+		{2,1,5},
+		{3,3,7},
+	}
+	fmt.Println(carPooling(trips, 5))
+
+	trips = [][]int{
+		{9,0,1},
+		{3,3,7},
+	}
+	fmt.Println(carPooling(trips, 4))
+}
