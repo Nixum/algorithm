@@ -16,7 +16,9 @@ func maxSlidingWindow(nums []int, k int) []int {
 		if valid == k {
 			res = append(res, drabList.top())
 			m := nums[left]
-			drabList.pop(m) // 很关键
+			// AC这道题很关键的地方，当left缩进的时候，
+			// 要把当前最大值给弹出，否则可能在下一轮里无法得到窗口内的最大值
+			drabList.pop(m) // ！！！
 			left++
 			valid--
 		}
@@ -42,6 +44,7 @@ func (list *drabIncrList) push(a int) {
 		list.n++
 		return
 	}
+	// 保证单调递增, 每次有新值进来，就把队列里比他小的除掉
 	for list.n > 0 && list.nums[list.n - 1] < a {
 		list.nums = list.nums[0: list.n - 1]
 		list.n--
