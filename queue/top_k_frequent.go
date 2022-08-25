@@ -42,7 +42,7 @@ type PairTopKFrequent struct {
 	freq int
 }
 
-// 大根堆，单调递减排序
+// 大根堆
 func adjustTopKFrequent(nums []PairTopKFrequent, rootIndex int, end int) {
 	tmp := nums[rootIndex]
 	for i := 2 * rootIndex + 1; i <= end; i = 2*i+1 {
