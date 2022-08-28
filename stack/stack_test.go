@@ -17,7 +17,7 @@ func TestRemoveDuplicates(t *testing.T) {
 }
 
 func TestEvalRPN(t *testing.T) {
-	rpn := []string{}
+	var rpn []string
 	rpn = []string{"2", "1", "+", "3", "*"}
 	fmt.Println(evalRPN(rpn))
 
@@ -26,4 +26,14 @@ func TestEvalRPN(t *testing.T) {
 
 	rpn = []string{"10", "6", "9", "3", "+", "-11", "*", "/", "*", "17", "+", "5", "+"}
 	fmt.Println(evalRPN(rpn))
+}
+
+func TestMyQueue(t *testing.T)  {
+	s := MyQueueConstructor()
+	s.Push(1)
+	s.Push(2)
+	fmt.Println(s.Peek())
+	fmt.Println(s.Pop())
+	fmt.Println(s.Pop())
+	fmt.Println(s.Empty())
 }

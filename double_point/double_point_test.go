@@ -107,3 +107,20 @@ func TestAdvantageCount(t *testing.T) {
 func TestReplaceBlank(t *testing.T) {
 	fmt.Println(replaceBlank("We are happy."))
 }
+
+func TestMinAddToMakeValid(t *testing.T)  {
+	fmt.Println(minAddToMakeValid("())"))
+	fmt.Println(minAddToMakeValid("((("))
+	fmt.Println(minAddToMakeValid("(())"))
+	fmt.Println(minAddToMakeValid("()))(("))
+}
+
+func TestMinInsertions(t *testing.T)  {
+	fmt.Println(minInsertions("())"))
+	fmt.Println(minInsertions("((("))
+	fmt.Println(minInsertions("(()))"))
+	fmt.Println(minInsertions("))())("))
+	fmt.Println(minInsertions(")))))))"))
+	fmt.Println(minInsertions("()())))()"))
+	fmt.Println(minInsertions("))())("))
+}
