@@ -3,18 +3,17 @@ package math
 import "container/heap"
 
 type MedianFinder struct {
-	descHeap priorityQueue
-	ascHeap  priorityQueue
+	descHeap *priorityQueue
+	ascHeap  *priorityQueue
 }
 
-
 func MedianFinderConstructor() MedianFinder {
-	asc := priorityQueue{
+	asc := &priorityQueue{
 		isDesc: false,
 		nums:   make([]int, 0),
 	}
 	heap.Init(asc)
-	desc := priorityQueue{
+	desc := &priorityQueue{
 		isDesc: true,
 		nums:   make([]int, 0),
 	}
@@ -47,33 +46,32 @@ func (m *MedianFinder) FindMedian() float64 {
 	return float64(m.ascHeap.Peek() + m.descHeap.Peek()) / 2.0
 }
 
-// 优先级队列
+// 优先级队列 --------------------------
 type priorityQueue struct {
 	isDesc bool
 	nums []int
 }
 
-func newPriorityQueue(isDesc bool) priorityQueue {
-	return priorityQueue{
-		isDesc: isDesc,
-		nums:   make([]int, 0),
-	}
-}
-func (q priorityQueue) Len() int {
+func (q *priorityQueue) Len() int {
 	return len(q.nums)
 }
-func (q priorityQueue) Less(i, j int) bool {
+
+func (q *priorityQueue) Less(i, j int) bool {
+	if q.isDesc {
+		return q.nums[i] > q.nums[j]
+	}
 	return q.nums[i] < q.nums[j]
 }
-func (q priorityQueue) Swap(i, j int) {
+
+func (q *priorityQueue) Swap(i, j int) {
 	q.nums[i], q.nums[j] = q.nums[j], q.nums[i]
 }
 
-func (q priorityQueue) Push(x interface{}) {
+func (q *priorityQueue) Push(x interface{}) {
 	q.nums = append(q.nums, x.(int))
 }
 
-func (q priorityQueue) Pop() interface{} {
+func (q *priorityQueue) Pop() interface{} {
 	old := q.nums
 	n := len(old)
 	x := old[n-1]
@@ -81,6 +79,6 @@ func (q priorityQueue) Pop() interface{} {
 	return x
 }
 
-func (q priorityQueue) Peek() int {
-	return q.nums[len(q.nums) - 1]
+func (q *priorityQueue) Peek() int {
+	return q.nums[0]
 }
