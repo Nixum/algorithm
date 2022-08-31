@@ -59,3 +59,17 @@ func TestLevelOrderBottom(t *testing.T) {
 	root = CreateBinaryTree([]int{})
 	fmt.Println(levelOrderBottom(root))
 }
+
+func TestRightSideView(t *testing.T) {
+	root := CreateBinaryTree([]int{1,2,3,-1,5,-1,4})
+	fmt.Println(rightSideView(root))
+
+	root = CreateBinaryTree([]int{1,-1,3})
+	fmt.Println(rightSideView(root))
+
+	root = CreateBinaryTree([]int{})
+	fmt.Println(rightSideView(root))
+
+	root = CreateBinaryTree([]int{1, 2})
+	fmt.Println(rightSideView(root))
+}
