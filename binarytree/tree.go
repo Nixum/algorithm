@@ -21,3 +21,15 @@ func build(nums []int, nodeIndex int, length int) *TreeNode {
 	}
 	return node
 }
+
+func QueuePop(queue []*TreeNode) (*TreeNode, []*TreeNode) {
+	if len(queue) == 0 {
+		return nil, queue
+	}
+	if len(queue) == 1 {
+		return queue[0], queue[:0]
+	}
+	node := queue[0]
+	queue = queue[1:]
+	return node, queue
+}
