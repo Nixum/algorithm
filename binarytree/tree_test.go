@@ -152,12 +152,12 @@ func TestMinDepth(t *testing.T) {
 	root := CreateBinaryTree([]int{1,2,3,4,5})
 	fmt.Println(minDepth(root))
 
-	//root = CreateBinaryTree([]int{3,9,20,-1,-1,15,7})
-	//fmt.Println(minDepth(root))
-	//
-	//root = CreateBinaryTree([]int{1,-1,2})
-	//fmt.Println(minDepth(root))
-	//
-	//root = CreateBinaryTree([]int{2,-1,3,-1,4,-1,5,-1,6})
-	//fmt.Println(minDepth(root))
+	root = CreateBinaryTree([]int{3,9,20,-1,-1,15,7})
+	fmt.Println(minDepth(root))
+
+	root = CreateBinaryTree([]int{1,-1,2})
+	fmt.Println(minDepth(root))
+
+	root = CreateBinaryTree([]int{2,-1,3,-1,4,-1,5,-1,6})
+	fmt.Println(minDepth(root))
 }
