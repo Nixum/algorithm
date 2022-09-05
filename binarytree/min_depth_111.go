@@ -17,6 +17,8 @@ func minDepth(root *TreeNode) int {
 		for i := 0; i < size; i++ {
 			node, queue = QueuePop(queue)
 			// 注意得在里面判断
+			// 如果在外面判断会导致只判断左节点
+			// 如果有右节点的左右子节点是空，就会漏判，因为此时已经pop出来了
 			if node.Left == nil && node.Right == nil {
 				return depth
 			}
