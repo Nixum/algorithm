@@ -33,3 +33,32 @@ func QueuePop(queue []*TreeNode) (*TreeNode, []*TreeNode) {
 	queue = queue[1:]
 	return node, queue
 }
+
+func QueueTop(queue []*TreeNode) *TreeNode {
+	if len(queue) == 0 {
+		return nil
+	}
+	return queue[0]
+}
+
+// N 叉树
+type Node struct {
+	Val int
+	Children []*Node
+
+	Left *Node
+	Right *Node
+	Next *Node
+}
+
+func QueueNodePop(queue []*Node) (*Node, []*Node) {
+	if len(queue) == 0 {
+		return nil, queue
+	}
+	if len(queue) == 1 {
+		return queue[0], queue[:0]
+	}
+	node := queue[0]
+	queue = queue[1:]
+	return node, queue
+}
