@@ -161,3 +161,59 @@ func TestMinDepth(t *testing.T) {
 	root = CreateBinaryTree([]int{2,-1,3,-1,4,-1,5,-1,6})
 	fmt.Println(minDepth(root))
 }
+
+func TestBinaryTreePaths(t *testing.T) {
+	root := CreateBinaryTree([]int{1,2,3,4,5})
+	fmt.Println(binaryTreePaths(root))
+
+	root = CreateBinaryTree([]int{3,9,20,-1,-1,15,7})
+	fmt.Println(binaryTreePaths(root))
+
+	root = CreateBinaryTree([]int{1,-1,2})
+	fmt.Println(binaryTreePaths(root))
+
+	root = CreateBinaryTree([]int{2,-1,3,-1,4,-1,5,-1,6})
+	fmt.Println(binaryTreePaths(root))
+}
+
+func TestIsSameTree(t *testing.T) {
+	root1 := CreateBinaryTree([]int{1,2,3,4,5})
+	root2 := CreateBinaryTree([]int{1,2,3,4,5})
+	fmt.Println(isSameTree(root1, root2))
+
+	root1 = CreateBinaryTree([]int{1,2})
+	root2 = CreateBinaryTree([]int{1, -1, 2})
+	fmt.Println(isSameTree(root1, root2))
+
+	root1 = CreateBinaryTree([]int{1,2, 1})
+	root2 = CreateBinaryTree([]int{1, 1, 2})
+	fmt.Println(isSameTree(root1, root2))
+}
+
+func TestSumOfLeftLeaves(t *testing.T) {
+	root := CreateBinaryTree([]int{3,9,20,-1,-1,15,7})
+	fmt.Println(sumOfLeftLeaves2(root))
+
+	root = CreateBinaryTree([]int{1})
+	fmt.Println(sumOfLeftLeaves(root))
+
+	root = CreateBinaryTree([]int{1,-1,2})
+	fmt.Println(sumOfLeftLeaves(root))
+
+	root = CreateBinaryTree([]int{2,-1,3,-1,4,-1,5,-1,6})
+	fmt.Println(sumOfLeftLeaves(root))
+}
+
+func TestFindBottomLeftValue(t *testing.T) {
+	root := CreateBinaryTree([]int{3,9,20,-1,-1,15,7})
+	fmt.Println(findBottomLeftValue2(root))
+
+	root = CreateBinaryTree([]int{1})
+	fmt.Println(findBottomLeftValue2(root))
+
+	root = CreateBinaryTree([]int{2,1,3})
+	fmt.Println(findBottomLeftValue2(root))
+
+	root = CreateBinaryTree([]int{1,2,3,4,-1,5,6,-1,-1,7})
+	fmt.Println(findBottomLeftValue2(root))
+}
