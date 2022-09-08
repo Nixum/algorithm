@@ -3,16 +3,16 @@ package binarytree
 import "fmt"
 
 func binaryTreePaths(root *TreeNode) []string {
-	res = make([]string, 0)
+	resInBinaryTreePaths = make([]string, 0)
 	backTrackingInBinaryTreePaths(root, "")
-	return res
+	return resInBinaryTreePaths
 }
 
-var res []string
+var resInBinaryTreePaths []string
 func backTrackingInBinaryTreePaths(root *TreeNode, path string) {
 	if root.Left == nil && root.Right == nil {
 		path += fmt.Sprintf("%d", root.Val)
-		res = append(res, path)
+		resInBinaryTreePaths = append(resInBinaryTreePaths, path)
 		return
 	}
 	path += fmt.Sprintf("%d->", root.Val)

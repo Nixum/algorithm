@@ -206,14 +206,14 @@ func TestSumOfLeftLeaves(t *testing.T) {
 
 func TestFindBottomLeftValue(t *testing.T) {
 	root := CreateBinaryTree([]int{3,9,20,-1,-1,15,7})
-	fmt.Println(findBottomLeftValue2(root))
+	fmt.Println(findBottomLeftValue(root))
 
 	root = CreateBinaryTree([]int{1})
-	fmt.Println(findBottomLeftValue2(root))
+	fmt.Println(findBottomLeftValue(root))
 
 	root = CreateBinaryTree([]int{2,1,3})
-	fmt.Println(findBottomLeftValue2(root))
+	fmt.Println(findBottomLeftValue(root))
 
 	root = CreateBinaryTree([]int{1,2,3,4,-1,5,6,-1,-1,7})
-	fmt.Println(findBottomLeftValue2(root))
+	fmt.Println(findBottomLeftValue(root))
 }

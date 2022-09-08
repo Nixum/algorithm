@@ -4,18 +4,28 @@ import "math"
 
 
 var bottomLeftValue int
-var heightInFindBottomLeftValue int
+var maxHeightInFindBottomLeftValue int
 func findBottomLeftValue(root *TreeNode) int {
 	bottomLeftValue = 0
-	heightInFindBottomLeftValue = 0
+	maxHeightInFindBottomLeftValue = 0
 	findBottomLeftValueInRecursion(root, 0)
 	return bottomLeftValue
 }
 
 func findBottomLeftValueInRecursion(root *TreeNode, leftHeight int) {
 	if root.Left == nil && root.Right == nil {
-
+		// +1是因为需要算上当前这一层
+		if leftHeight + 1 > maxHeightInFindBottomLeftValue {
+			maxHeightInFindBottomLeftValue = leftHeight + 1
+			bottomLeftValue = root.Val
+		}
 		return
+	}
+	if root.Left != nil {
+		findBottomLeftValueInRecursion(root.Left, leftHeight + 1)
+	}
+	if root.Right != nil {
+		findBottomLeftValueInRecursion(root.Right, leftHeight + 1)
 	}
 	return
 }
