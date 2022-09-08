@@ -217,3 +217,31 @@ func TestFindBottomLeftValue(t *testing.T) {
 	root = CreateBinaryTree([]int{1,2,3,4,-1,5,6,-1,-1,7})
 	fmt.Println(findBottomLeftValue(root))
 }
+
+func TestHasPathSum(t *testing.T) {
+	root := CreateBinaryTree([]int{5,4,8,11,-1,13,4,7,2,-1,-1,-1,1})
+	fmt.Println(hasPathSum2(root, 22))
+
+	root = CreateBinaryTree([]int{1, 2})
+	fmt.Println(hasPathSum2(root, 1))
+
+	root = CreateBinaryTree([]int{})
+	fmt.Println(hasPathSum2(root, 0))
+
+	root = CreateBinaryTree([]int{1,2,3})
+	fmt.Println(hasPathSum2(root, 5))
+}
+
+func TestPathSum(t *testing.T) {
+	root := CreateBinaryTree([]int{5,4,8,11,-1,13,4,7,2,-1,-1, -1, -1,5,1})
+	fmt.Println(pathSum(root, 22))
+
+	root = CreateBinaryTree([]int{1, 2, 3})
+	fmt.Println(pathSum(root, 5))
+
+	root = CreateBinaryTree([]int{})
+	fmt.Println(pathSum(root, 0))
+
+	root = CreateBinaryTree([]int{1,2})
+	fmt.Println(pathSum(root, 0))
+}
