@@ -16,7 +16,7 @@ func buildTreeByInAndPost(in []int, post []int) *TreeNode {
 		}
 	}
 	inLeft := in[:inNodeIndex]
-	node.Left = buildTree(inLeft, post[:len(inLeft)])
-	node.Right = buildTree(in[inNodeIndex + 1:], post[len(inLeft) : len(post) - 1])
+	node.Left = buildTreeByInAndPost(inLeft, post[:len(inLeft)])
+	node.Right = buildTreeByInAndPost(in[inNodeIndex + 1:], post[len(inLeft) : len(post) - 1])
 	return node
 }

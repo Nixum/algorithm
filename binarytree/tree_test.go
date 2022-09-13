@@ -245,3 +245,17 @@ func TestPathSum(t *testing.T) {
 	root = CreateBinaryTree([]int{1,2})
 	fmt.Println(pathSum(root, 0))
 }
+
+func TestGetMinimumDifference(t *testing.T) {
+	root := CreateBinaryTree([]int{4,2,6,1,3})
+	fmt.Println(getMinimumDifference(root))
+
+	root = CreateBinaryTree([]int{1,0,48,-1,-1,12,49})
+	fmt.Println(getMinimumDifference(root))
+
+	root = CreateBinaryTree([]int{})
+	fmt.Println(getMinimumDifference(root))
+
+	root = CreateBinaryTree([]int{1,2})
+	fmt.Println(getMinimumDifference(root))
+}
