@@ -36,6 +36,9 @@ func TestInorderTraversal(t *testing.T) {
 
 	root = CreateBinaryTree([]int{1, 2, 3, 4, -1, 5, 6, 7})
 	fmt.Println(TraversalByInorderInIteration2(root))
+
+	root = CreateBinaryTree([]int{6,4,10,2,5,8,12,1,3,-1,-1,7,9,11,13})
+	fmt.Println(TraversalByInorderInIteration2(root))
 }
 
 func TestLevelOrder(t *testing.T) {
@@ -258,4 +261,12 @@ func TestGetMinimumDifference(t *testing.T) {
 
 	root = CreateBinaryTree([]int{1,2})
 	fmt.Println(getMinimumDifference(root))
+}
+
+func TestConvertBST(t *testing.T) {
+	root := CreateBinaryTree([]int{4,1,6,0,2,5,7,-1,-1,-1,3,-1,-1,-1,8})
+	fmt.Println(levelOrder(convertBST(root)))
+
+	root = CreateBinaryTree([]int{0, -1, 1})
+	fmt.Println(levelOrder(convertBST(root)))
 }
