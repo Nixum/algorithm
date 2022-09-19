@@ -270,3 +270,29 @@ func TestConvertBST(t *testing.T) {
 	root = CreateBinaryTree([]int{0, -1, 1})
 	fmt.Println(levelOrder(convertBST(root)))
 }
+
+func TestFlatten(t *testing.T) {
+	root := CreateBinaryTree([]int{1,2,5,3,4,-1,6})
+	flatten(root)
+	fmt.Println(preorderTraversal(root))
+}
+
+func TestCodec(t *testing.T) {
+	var root *TreeNode
+	p := ""
+	c := Constructor()
+	root = CreateBinaryTree([]int{1,2,3,-1,-1,4,5})
+	p = c.serialize(root)
+	fmt.Println(p)
+	fmt.Println(preorderTraversal(c.deserialize(p)))
+
+	root = CreateBinaryTree([]int{1,2,3,-1,4})
+	p = c.serialize(root)
+	fmt.Println(p)
+	fmt.Println(preorderTraversal(c.deserialize(p)))
+
+	root = nil
+	p = c.serialize(root)
+	fmt.Println(p)
+	fmt.Println(preorderTraversal(c.deserialize(p)))
+}
