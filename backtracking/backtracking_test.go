@@ -20,3 +20,31 @@ func TestCombinationSum3(t *testing.T) {
 	fmt.Println(combinationSum3(3, 9))
 	fmt.Println(combinationSum3(4, 1))
 }
+
+func TestLetterCombinations(t *testing.T) {
+	fmt.Println(letterCombinations("23"))
+	fmt.Println(letterCombinations(""))
+	fmt.Println(letterCombinations("2"))
+}
+
+func TestCombinationSum(t *testing.T) {
+	var arr []int
+	arr = []int{2,3,6,7}
+	fmt.Println(combinationSum(arr, 7))
+	arr = []int{2,3,5}
+	fmt.Println(combinationSum(arr, 8))
+	arr = []int{2}
+	fmt.Println(combinationSum(arr, 1))
+}
+
+func TestCombinationSum2(t *testing.T) {
+	var arr []int
+	arr = []int{10,1,2,7,6,1,5}
+	fmt.Println(combinationSum2(arr, 8))
+	arr = []int{2,5,2,1,2}
+	fmt.Println(combinationSum2(arr, 5))
+	arr = []int{2}
+	fmt.Println(combinationSum2(arr, 1))
+	arr = []int{2, 2, 2}
+	fmt.Println(combinationSum2(arr, 2))
+}
