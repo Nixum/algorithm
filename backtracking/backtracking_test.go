@@ -48,3 +48,23 @@ func TestCombinationSum2(t *testing.T) {
 	arr = []int{2, 2, 2}
 	fmt.Println(combinationSum2(arr, 2))
 }
+
+func TestPartition(t *testing.T) {
+	arr := "aab"
+	fmt.Println(partition(arr))
+	arr = "a"
+	fmt.Println(partition(arr))
+}
+
+func TestRestoreIpAddresses(t *testing.T) {
+	arr := "25525511135"
+	fmt.Println(restoreIpAddresses(arr))
+	arr = "0000"
+	fmt.Println(restoreIpAddresses(arr))
+	arr = "1111"
+	fmt.Println(restoreIpAddresses(arr))
+	arr = "010010"
+	fmt.Println(restoreIpAddresses(arr))
+	arr = "101023"
+	fmt.Println(restoreIpAddresses(arr))
+}

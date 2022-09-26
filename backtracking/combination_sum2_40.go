@@ -23,6 +23,7 @@ func backTrackingInCombinationSum2(arr []int, t int, start int, flag []bool) {
 		return
 	}
 	for i := start; i < len(arr); i++ {
+		// 防止同层重复取，比如【1，1，2】，t=3
 		if i - 1 >= 0 && arr[i] == arr[i - 1] && flag[i - 1] == false {
 			continue
 		}
