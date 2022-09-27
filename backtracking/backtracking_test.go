@@ -68,3 +68,31 @@ func TestRestoreIpAddresses(t *testing.T) {
 	arr = "101023"
 	fmt.Println(restoreIpAddresses(arr))
 }
+
+func TestSubsets(t *testing.T) {
+	var arr []int
+	arr = []int{1,2,3}
+	fmt.Println(subsets(arr))
+	arr = []int{0}
+	fmt.Println(subsets(arr))
+}
+
+func TestSubsetsWithDup(t *testing.T) {
+	var arr []int
+	arr = []int{1,2,2}
+	fmt.Println(subsetsWithDup(arr))
+	arr = []int{1,1,2}
+	fmt.Println(subsetsWithDup(arr))
+	arr = []int{0}
+	fmt.Println(subsetsWithDup(arr))
+}
+
+func TestFindSubsequences(t *testing.T) {
+	var arr []int
+	arr = []int{4,6,7,7}
+	fmt.Println(findSubsequences(arr))
+	arr = []int{4,4,3,2,1}
+	fmt.Println(findSubsequences(arr))
+	arr = []int{0}
+	fmt.Println(findSubsequences(arr))
+}

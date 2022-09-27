@@ -19,7 +19,7 @@ func backTrackingInPartition(str string, start int) {
 	path := ""
 	for i := start; i < len(str); i++ {
 		path += string(str[i])
-		if !isPartitionInPartition(path) {
+		if !isPalindromeInPartition(path) {
 			continue
 		}
 		pathInPartition = append(pathInPartition, path)
@@ -28,7 +28,7 @@ func backTrackingInPartition(str string, start int) {
 	}
 }
 
-func isPartitionInPartition(str string) bool {
+func isPalindromeInPartition(str string) bool {
 	i := 0
 	j := len(str) - 1
 	for i < j {
