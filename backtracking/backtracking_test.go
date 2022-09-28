@@ -96,3 +96,23 @@ func TestFindSubsequences(t *testing.T) {
 	arr = []int{0}
 	fmt.Println(findSubsequences(arr))
 }
+
+func TestPermute(t *testing.T) {
+	var arr []int
+	arr = []int{1,2,3}
+	fmt.Println(permute(arr))
+	arr = []int{0, 1}
+	fmt.Println(permute(arr))
+	arr = []int{1}
+	fmt.Println(permute(arr))
+}
+
+func TestPermuteUnique(t *testing.T) {
+	var arr []int
+	arr = []int{1,1,2}
+	fmt.Println(permuteUnique(arr))
+	arr = []int{0, 1, 2}
+	fmt.Println(permuteUnique(arr))
+	arr = []int{1}
+	fmt.Println(permuteUnique(arr))
+}
