@@ -116,3 +116,18 @@ func TestPermuteUnique(t *testing.T) {
 	arr = []int{1}
 	fmt.Println(permuteUnique(arr))
 }
+
+func TestSolveNQueens(t *testing.T) {
+	fmt.Println(solveNQueens(4))
+}
+
+func TestFindItinerary(t *testing.T) {
+	tickets := make([][]string, 0)
+	tickets = [][]string{
+		{"MUC", "LHR"},
+		{"JFK", "MUC"},
+		{"SFO", "SJC"},
+		{"LHR", "SFO"},
+	}
+	fmt.Println(findItinerary(tickets))
+}
