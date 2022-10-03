@@ -131,3 +131,21 @@ func TestFindItinerary(t *testing.T) {
 	}
 	fmt.Println(findItinerary(tickets))
 }
+
+func TestFindTargetSumWays(t *testing.T) {
+	var arr []int
+	arr = []int{3}
+	fmt.Println(findTargetSumWays2(arr, 3))
+
+	arr = []int{1,1,1,1,1}
+	fmt.Println(findTargetSumWays2(arr, 3))
+}
+
+func TestCanPartitionKSubsets(t *testing.T) {
+	var arr []int
+	arr = []int{4,3,2,3,5,2,1}
+	fmt.Println(canPartitionKSubsets(arr, 4))
+
+	arr = []int{1,2,3,4}
+	fmt.Println(canPartitionKSubsets(arr, 3))
+}
