@@ -73,3 +73,37 @@ func TestLargestSumAfterKNegations(t *testing.T) {
 	arr = []int{2,-3,-1,5,-4}
 	fmt.Println(largestSumAfterKNegations(arr, 2))
 }
+
+func TestCandy(t *testing.T) {
+	var arr []int
+	arr = []int{1,0,2}
+	fmt.Println(candy(arr))
+
+	arr = []int{1,2,2}
+	fmt.Println(candy(arr))
+}
+
+func TestLemonadeChange(t *testing.T) {
+	var arr []int
+	arr = []int{5,5,5,10,20}
+	fmt.Println(lemonadeChange(arr))
+
+	arr = []int{5,5,10}
+	fmt.Println(lemonadeChange(arr))
+
+	arr = []int{10,10}
+	fmt.Println(lemonadeChange(arr))
+}
+
+func TestReconstructQueue(t *testing.T) {
+	var arr [][]int
+	arr = [][]int{
+		{7,0},{4,4},{7,1},{5,0},{6,1},{5,2},
+	}
+	fmt.Println(reconstructQueue(arr))
+
+	arr = [][]int{
+		{6,0},{5,0},{4,0},{3,2},{2,2},{1,4},
+	}
+	fmt.Println(reconstructQueue(arr))
+}
