@@ -107,3 +107,49 @@ func TestReconstructQueue(t *testing.T) {
 	}
 	fmt.Println(reconstructQueue(arr))
 }
+
+func TestFindMinArrowShots(t *testing.T) {
+	var arr [][]int
+	arr = [][]int{
+		{10,16},{2,8},{1,6},{7,12},
+	}
+	fmt.Println(findMinArrowShots(arr))
+
+	arr = [][]int{
+		{1,2},{3,4},{5,6},{7,8},
+	}
+	fmt.Println(findMinArrowShots(arr))
+
+	arr = [][]int{
+		{1,2},{2,3},{3,4},{4,5},
+	}
+	fmt.Println(findMinArrowShots(arr))
+
+	arr = [][]int{
+		{1,2},{4,5},{1,5},
+	}
+	fmt.Println(findMinArrowShots(arr))
+
+	arr = [][]int{
+		{9,12},{1,10},{4,11},{8,12},{3,9},{6,7},{6,9},
+	}
+	fmt.Println(findMinArrowShots2(arr))
+}
+
+func TestEraseOverlapIntervals(t *testing.T) {
+	var arr [][]int
+	arr = [][]int{
+		{1,2}, {2,3}, {3,4}, {1,3},
+	}
+	fmt.Println(eraseOverlapIntervals(arr))
+
+	arr = [][]int{
+		{1,2}, {1,2}, {1,2},
+	}
+	fmt.Println(eraseOverlapIntervals(arr))
+
+	arr = [][]int{
+		{1,2}, {2,3},
+	}
+	fmt.Println(eraseOverlapIntervals(arr))
+}
