@@ -153,3 +153,32 @@ func TestEraseOverlapIntervals(t *testing.T) {
 	}
 	fmt.Println(eraseOverlapIntervals(arr))
 }
+
+func TestMerge(t *testing.T) {
+	var arr [][]int
+	arr = [][]int{
+		{1,3},{2,6},{8,10},{15,18},
+	}
+	fmt.Println(merge(arr))
+
+	arr = [][]int{
+		{1,4}, {4,5},
+	}
+	fmt.Println(merge(arr))
+
+	arr = [][]int{
+		{1,3},{2,6},{8,10},{15,18},
+	}
+	fmt.Println(merge(arr))
+
+	arr = [][]int{
+		{1,4},{2,3},
+	}
+	fmt.Println(merge(arr))
+}
+
+func TestMonotoneIncreasingDigits(t *testing.T) {
+	fmt.Println(monotoneIncreasingDigits(10))
+	fmt.Println(monotoneIncreasingDigits(1234))
+	fmt.Println(monotoneIncreasingDigits(332))
+}
