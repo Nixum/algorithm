@@ -181,4 +181,6 @@ func TestMonotoneIncreasingDigits(t *testing.T) {
 	fmt.Println(monotoneIncreasingDigits(10))
 	fmt.Println(monotoneIncreasingDigits(1234))
 	fmt.Println(monotoneIncreasingDigits(332))
+	fmt.Println(monotoneIncreasingDigits(2332))
+	fmt.Println(monotoneIncreasingDigits(434432))
 }
