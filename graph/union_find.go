@@ -1,12 +1,12 @@
 package graph
 
 type UF struct {
-	count int
+	count int // 联通分量的数量
 	parent []int
-	size []int
+	size []int // 节点i下的节点数量
 }
 
-func initUF(n int) *UF {
+func InitUF(n int) *UF {
 	parent := make([]int, n)
 	size := make([]int, n)
 	for i := 0; i < n; i++ {
@@ -20,9 +20,10 @@ func initUF(n int) *UF {
 	}
 }
 
+// 将节点 p 和节点 q 连通
 func (u *UF) Union(p, q int) {
-	rootP := u.find(p)
-	rootQ := u.find(q)
+	rootP := u.Find(p)
+	rootQ := u.Find(q)
 	if rootP == rootQ {
 		return
 	}
@@ -36,11 +37,18 @@ func (u *UF) Union(p, q int) {
 	u.count--
 }
 
-func (u *UF) connected(p, q int) bool {
-	return u.find(p) == u.find(q)
+func (u *UF) Count() int {
+	return u.count
 }
 
-func (u *UF) find(x int) int {
+// 判断节点 p 和节点 q 是否连通
+func (u *UF) Connected(p, q int) bool {
+	return u.Find(p) == u.Find(q)
+}
+
+// 返回节点 x 的连通分量根节点
+func (u *UF) Find(x int) int {
+	// 因为根节点肯定是指向自己的
 	for x != u.parent[x] {
 		u.parent[x] = u.parent[u.parent[x]]
 		x = u.parent[x]
