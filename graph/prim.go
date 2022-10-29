@@ -2,6 +2,7 @@ package graph
 
 import "container/heap"
 
+// 最小生成树
 // 原理：遍历每一个点所关联的边，取权重最小的边
 // 拿到该边的下一个点，继续取该点的关联边权重最小的...
 // 直到所有点都取完
@@ -13,13 +14,13 @@ type Prim struct {
 	// 最小权重和
 	weightSum int
 	// i, j, 3 表示：节点i的所有相邻边数组，有j条边，[3]int表示 from、to、weight
+	// i 等于 from
 	graph [][][]int
 }
 
 func initPrim(graph [][][]int) Prim {
 	n := len(graph)
 	pq := &EdgeInPrim{}
-	heap.Init(pq)
 	weightSum := 0
 	inMst := make([]bool, n)
 	// 从节点0开始切分
@@ -27,7 +28,7 @@ func initPrim(graph [][][]int) Prim {
 	cut(graph, inMst, pq, 0)
 	// 不断进行切分，向最小生成树中添加边
 	for pq.Len() > 0 {
-		edges := pq.Pop().([]int)
+		edges := heap.Pop(pq).([]int)
 		to := edges[1]
 		weight := edges[2]
 		if inMst[to] {
@@ -54,7 +55,7 @@ func cut(graph [][][]int, inMst []bool, pq *EdgeInPrim, s int) {
 		if inMst[to] {
 			continue
 		}
-		pq.Push(edges)
+		heap.Push(pq, edges)
 	}
 }
 

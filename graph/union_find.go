@@ -1,5 +1,6 @@
 package graph
 
+// 有向无环图，作用：最小生成树; 计算联通分量
 type UF struct {
 	count int // 联通分量的数量
 	parent []int

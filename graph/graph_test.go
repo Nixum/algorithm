@@ -56,3 +56,39 @@ func TestFindOrder(t *testing.T) {
 	}
 	fmt.Println(findOrder(4, arr))
 }
+
+func TestNetworkDelayTime(t *testing.T) {
+	arr := [][]int{}
+	arr = [][]int{
+		{2, 1, 1},
+		{2, 3, 1},
+		{3, 4, 1},
+	}
+	fmt.Println(networkDelayTime(arr, 4, 2))
+}
+
+func TestMinimumEffortPath(t *testing.T) {
+	arr := [][]int{}
+	arr = [][]int{
+		{1,2,2},
+		{3,8,2},
+		{5,3,5},
+	}
+	fmt.Println(minimumEffortPath(arr))
+
+	arr = [][]int{
+		{1,2,3},
+		{3,8,4},
+		{5,3,5},
+	}
+	fmt.Println(minimumEffortPath(arr))
+
+	arr = [][]int{
+		{1,2,1,1,1},
+		{1,2,1,2,1},
+		{1,2,1,2,1},
+		{1,2,1,2,1},
+		{1,1,1,2,1},
+	}
+	fmt.Println(minimumEffortPath(arr))
+}
