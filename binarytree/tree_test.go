@@ -296,3 +296,7 @@ func TestCodec(t *testing.T) {
 	fmt.Println(p)
 	fmt.Println(preorderTraversal(c.deserialize(p)))
 }
+
+func TestGenerateTrees(t *testing.T) {
+	fmt.Println(generateTrees(3))
+}

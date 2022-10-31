@@ -13,6 +13,7 @@ func buildInGenerateTrees(left, right int) []*TreeNode {
 		res = append(res, nil)
 		return res
 	}
+	// 穷举根节点所有可能
 	for i := left; i <= right; i++ {
 		leftNodes := buildInGenerateTrees(left, i - 1)
 		rightNodes := buildInGenerateTrees(i + 1, right)
