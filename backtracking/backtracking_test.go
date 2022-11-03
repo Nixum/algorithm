@@ -149,3 +149,15 @@ func TestCanPartitionKSubsets(t *testing.T) {
 	arr = []int{1,2,3,4}
 	fmt.Println(canPartitionKSubsets(arr, 3))
 }
+
+func TestMakeSquare(t *testing.T) {
+	var arr []int
+	arr = []int{1,1,2,2,2}
+	fmt.Println(makesquare(arr))
+
+	arr = []int{3,3,3,3,4}
+	fmt.Println(makesquare(arr))
+
+	arr = []int{1,2,3,4,5,6,7,8,9,10,11,12,13,14,15}
+	fmt.Println(makesquare(arr))
+}
