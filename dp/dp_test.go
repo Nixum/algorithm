@@ -28,3 +28,9 @@ func TestLastStoneWeightII(t *testing.T) {
 	arr = []int{31,26,33,21,40}
 	fmt.Println(lastStoneWeightII(arr))
 }
+
+func TestFindMaxForm(t *testing.T) {
+	var arr []string
+	arr = []string{"10","0001","111001","1","0"}
+	fmt.Println(findMaxForm(arr, 5, 3))
+}
