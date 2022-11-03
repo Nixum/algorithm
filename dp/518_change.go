@@ -1,6 +1,6 @@
 package dp
 
-// 求数量：dp[j] += dp[j - coins[i]]
+// 求数量：dp[j] += dp[j - coins[i]], 凑成总金额j的货币组合数为dp[j]
 // 如果求组合数就是外层for循环遍历物品，内层for遍历背包。
 // 如果求排列数就是外层for遍历背包，内层for循环遍历物品。
 func change(amount int, coins []int) int {
