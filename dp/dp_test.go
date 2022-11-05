@@ -34,3 +34,9 @@ func TestFindMaxForm(t *testing.T) {
 	arr = []string{"10","0001","111001","1","0"}
 	fmt.Println(findMaxForm(arr, 5, 3))
 }
+
+func TestWordBreak(t *testing.T) {
+	fmt.Println(wordBreak("leetcode", []string{"leet", "code"}))
+	fmt.Println(wordBreak("applepenapple", []string{"apple", "pen"}))
+	fmt.Println(wordBreak("catsandog", []string{"cats", "dog", "sand", "and", "cat"}))
+}
