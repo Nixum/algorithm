@@ -16,6 +16,7 @@ func findLength(nums1 []int, nums2 []int) int {
 			if nums1[i - 1] == nums2[j - 1] {
 				dp[i][j] = dp[i - 1][j - 1] + 1
 			}
+			// 因为是连续的子序列，如果中间断了就得重新计，所以需要res来保存最长连续序列的长度
 			if dp[i][j] > res {
 				res = dp[i][j]
 			}

@@ -14,7 +14,6 @@ func longestCommonSubsequence(t1 string, t2 string) int {
 	for i := 0; i < len(t1) + 1; i++ {
 		dp[i] = make([]int, len(t2) + 1)
 	}
-	res := 0
 	for i := 1; i <= len(t1) ; i++ {
 		for j := 1; j <= len(t2); j++ {
 			if t1[i - 1] == t2[j - 1] {
@@ -22,10 +21,8 @@ func longestCommonSubsequence(t1 string, t2 string) int {
 			} else {
 				dp[i][j] = common.Max(dp[i - 1][j], dp[i][j - 1])
 			}
-			if res < dp[i][j] {
-				res = dp[i][j]
-			}
 		}
 	}
-	return res
+	// 因为不要求是连续的，所以可以拿最后的结果
+	return dp[len(t1)][len(t2)]
 }
