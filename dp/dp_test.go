@@ -40,3 +40,36 @@ func TestWordBreak(t *testing.T) {
 	fmt.Println(wordBreak("applepenapple", []string{"apple", "pen"}))
 	fmt.Println(wordBreak("catsandog", []string{"cats", "dog", "sand", "and", "cat"}))
 }
+
+func TestRobII(t *testing.T) {
+	fmt.Println(robII([]int{2,3,2}))
+	fmt.Println(robII([]int{1,2,3,1}))
+	fmt.Println(robII([]int{0}))
+}
+
+func TestMaxProfitIII(t *testing.T) {
+	fmt.Println(maxProfitIII([]int{3,3,5,0,0,3,1,4}))
+	fmt.Println(maxProfitIII([]int{1,2,3,4,5}))
+	fmt.Println(maxProfitIII([]int{7,6,4,3,1}))
+}
+
+func TestMaxProfitIV(t *testing.T) {
+	fmt.Println(maxProfitIV(2, []int{2, 4, 1}))
+	fmt.Println(maxProfitIV(2, []int{3, 2, 6, 5, 0, 3}))
+}
+
+func TestMaxProfitV(t *testing.T) {
+	fmt.Println(maxProfitV([]int{1,2,3,0,2}))
+	fmt.Println(maxProfitV([]int{1}))
+	fmt.Println(maxProfitV([]int{1,2}))
+}
+
+func TestMaxProfitVI(t *testing.T) {
+	fmt.Println(maxProfitVI2([]int{1,3,2,8,4,9}, 2))
+	fmt.Println(maxProfitVI2([]int{1,3,7,5,10,3}, 3))
+}
+
+func TestFindLengthOfLCIS(t *testing.T) {
+	fmt.Println(findLengthOfLCIS([]int{1,3,5,4,7}))
+	fmt.Println(findLengthOfLCIS([]int{2,2,2,2,2}))
+}
