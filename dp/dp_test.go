@@ -73,3 +73,13 @@ func TestFindLengthOfLCIS(t *testing.T) {
 	fmt.Println(findLengthOfLCIS([]int{1,3,5,4,7}))
 	fmt.Println(findLengthOfLCIS([]int{2,2,2,2,2}))
 }
+
+func TestMaxSubArray(t *testing.T) {
+	fmt.Println(maxSubArray([]int{-2,1,-3,4,-1,2,1,-5,4}))
+	fmt.Println(maxSubArray2([]int{-2,1,-3,4,-1,2,1,-5,4}))
+}
+
+func TestIsSubsequence(t *testing.T) {
+	fmt.Println(isSubsequence("abc", "ahbgdc"))
+	fmt.Println(isSubsequence("axc", "ahbgdc"))
+}
