@@ -83,3 +83,9 @@ func TestIsSubsequence(t *testing.T) {
 	fmt.Println(isSubsequence("abc", "ahbgdc"))
 	fmt.Println(isSubsequence("axc", "ahbgdc"))
 }
+
+func TestLongestPalindrome(t *testing.T) {
+	fmt.Println(longestPalindrome("bbbab"))
+	fmt.Println(longestPalindrome("cbbd"))
+	fmt.Println(longestPalindrome("aaaaa"))
+}
