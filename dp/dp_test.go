@@ -89,3 +89,8 @@ func TestLongestPalindrome(t *testing.T) {
 	fmt.Println(longestPalindrome("cbbd"))
 	fmt.Println(longestPalindrome("aaaaa"))
 }
+
+func TestMinimumDeleteSum(t *testing.T) {
+	fmt.Println(minimumDeleteSum("sea", "eat"))
+	fmt.Println(minimumDeleteSum("delete", "leet"))
+}
