@@ -120,3 +120,9 @@ func TestFindCheapestPrice(t *testing.T) {
 	}
 	fmt.Println(findCheapestPrice(len(edges), edges, 0, 2, 0))
 }
+
+func TestSuperEggDrop(t *testing.T) {
+	fmt.Println(superEggDrop(1, 2))
+	fmt.Println(superEggDrop(2, 6))
+	fmt.Println(superEggDrop(3, 14))
+}

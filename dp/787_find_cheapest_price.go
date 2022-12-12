@@ -38,6 +38,7 @@ func dpInFindCheapestPrice(src int, s int, k int, dp [][]int, graph map[int][][]
 	res := math.MaxInt64
 	if _, exist := graph[s]; exist {
 		for _, next := range graph[s] {
+			// 从后往前推
 			nextPrice := dpInFindCheapestPrice(src, next[0], k - 1, dp, graph)
 			if nextPrice != -1 {
 				res = common.Min(res, nextPrice + next[1])

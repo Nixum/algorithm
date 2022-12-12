@@ -30,3 +30,12 @@ func TestMedianFinder(t *testing.T) {
 	f.AddNum(3)
 	fmt.Println(f.FindMedian())
 }
+
+func TestHammingWeight(t *testing.T) {
+	fmt.Println(hammingWeight(11))
+}
+
+func TestIsPowerOfTwo(t *testing.T) {
+	fmt.Println(isPowerOfTwo(11))
+	fmt.Println(isPowerOfTwo(8))
+}
