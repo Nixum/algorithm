@@ -39,3 +39,7 @@ func TestIsPowerOfTwo(t *testing.T) {
 	fmt.Println(isPowerOfTwo(11))
 	fmt.Println(isPowerOfTwo(8))
 }
+
+func TestPreimageSizeFZF(t *testing.T) {
+	fmt.Println(preimageSizeFZF(3))
+}
