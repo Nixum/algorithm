@@ -44,3 +44,14 @@ func TestStrStr(t *testing.T) {
 	fmt.Println(strStr("hello", "ll"))
 	fmt.Println(strStr("aaaaa", "bba"))
 }
+
+func TestGroupAnagrams(t *testing.T) {
+	strs := []string{"eat", "tea", "tan", "ate", "nat", "bat"}
+	fmt.Println(groupAnagrams(strs))
+
+	strs = []string{""}
+	fmt.Println(groupAnagrams(strs))
+
+	strs = []string{"a"}
+	fmt.Println(groupAnagrams(strs))
+}

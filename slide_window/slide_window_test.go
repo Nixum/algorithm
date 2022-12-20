@@ -38,6 +38,7 @@ func TestLengthOfLongestSubstring(t *testing.T) {
 	fmt.Println(lengthOfLongestSubstring("bbbbb"))
 	fmt.Println(lengthOfLongestSubstring("pwwkew"))
 	fmt.Println(lengthOfLongestSubstring("abcabcbb"))
+	fmt.Println(lengthOfLongestSubstring(""))
 }
 
 func TestFindAnagrams(t *testing.T) {
