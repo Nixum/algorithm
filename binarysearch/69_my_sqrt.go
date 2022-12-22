@@ -1,5 +1,6 @@
 package binarysearch
 
+// 求x的算术平方根，由于结果是整形，所以返回去掉小数的结果
 func MySqrt(x int) int {
 	if x == 1 {
 		return 1
@@ -12,6 +13,7 @@ func MySqrt(x int) int {
 	return 0
 }
 
+// 思路：二分查找，返回小于x的最大值或者等于x的值
 func MySqrt2(x int) int {
 	if x == 1 {
 		return 1

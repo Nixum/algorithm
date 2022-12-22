@@ -47,3 +47,8 @@ func TestPreimageSizeFZF(t *testing.T) {
 func TestMyPow(t *testing.T) {
 	fmt.Println(myPow2(2, 10))
 }
+
+func TestMySqrt(t *testing.T) {
+	fmt.Println(mySqrt(4))
+	fmt.Println(mySqrt(8))
+}

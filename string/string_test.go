@@ -55,3 +55,14 @@ func TestGroupAnagrams(t *testing.T) {
 	strs = []string{"a"}
 	fmt.Println(groupAnagrams(strs))
 }
+
+func TestLargestNumber(t *testing.T) {
+	nums := []int{10, 2}
+	fmt.Println(largestNumber(nums))
+
+	nums = []int{3,30,34,5,9}
+	fmt.Println(largestNumber(nums))
+
+	nums = []int{0, 0, 0}
+	fmt.Println(largestNumber(nums))
+}
