@@ -126,3 +126,11 @@ func TestSuperEggDrop(t *testing.T) {
 	fmt.Println(superEggDrop(2, 6))
 	fmt.Println(superEggDrop(3, 14))
 }
+
+func TestMaxProduct(t *testing.T) {
+	nums := []int{2, 3, -2, 4}
+	fmt.Println(maxProduct(nums))
+
+	nums = []int{-2,0,-1}
+	fmt.Println(maxProduct(nums))
+}
