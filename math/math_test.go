@@ -52,3 +52,8 @@ func TestMySqrt(t *testing.T) {
 	fmt.Println(mySqrt(4))
 	fmt.Println(mySqrt(8))
 }
+
+func TestGenerate(t *testing.T) {
+	fmt.Println(generate(5))
+	fmt.Println(generate(1))
+}
