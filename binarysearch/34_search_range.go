@@ -19,6 +19,8 @@ func SearchRange(nums []int, t int) []int {
 			for nums[res[1]] == t {
 				res[1]++
 			}
+			res[0]++
+			res[1]--
 			return res
 		}
 	}
