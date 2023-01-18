@@ -41,8 +41,10 @@ func TestRepeatedSubstringPattern(t *testing.T) {
 }
 
 func TestStrStr(t *testing.T) {
-	fmt.Println(strStr("hello", "ll"))
-	fmt.Println(strStr("aaaaa", "bba"))
+	//fmt.Println(strStr("hello", "ll"))
+	//fmt.Println(strStr("aaaaa", "bba"))
+	fmt.Println(strStr("mississippi", "issip"))
+	fmt.Println(strStr("sadbutsad", "sad"))
 }
 
 func TestGroupAnagrams(t *testing.T) {
