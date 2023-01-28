@@ -68,3 +68,17 @@ func TestLargestNumber(t *testing.T) {
 	nums = []int{0, 0, 0}
 	fmt.Println(largestNumber(nums))
 }
+
+func TestMyAtoi(t *testing.T) {
+	fmt.Println(myAtoi("-91283472332")) // -2147483648
+	fmt.Println(myAtoi("9223372036854775808")) // 2147483647
+	fmt.Println(myAtoi("+-12")) // 0
+	fmt.Println(myAtoi("asdasd+1")) // 0
+	fmt.Println(myAtoi("+1")) // 1
+	fmt.Println(myAtoi("+42")) // 42
+	fmt.Println(myAtoi("42")) // 42
+	fmt.Println(myAtoi("   -42")) // -42
+	fmt.Println(myAtoi("4193 with words")) // 4193
+	fmt.Println(myAtoi("words and 987")) // 0
+	fmt.Println(myAtoi("-91283472332")) // -2147483648
+}
