@@ -1,7 +1,8 @@
 package math
 
 // 思路，一个个乘会太慢，那就成倍成倍乘，幂/2，意味着底要平方
-// 快速幂解法：
+// 幂/2 有两种方案，一种是判断n的奇偶，再 x^(n/2) * x^(n/2)，但是这种会超时，虽然指数变小了，但是仍然要算两次
+// 另一种是快速幂解法：
 // 如果幂是偶数，以 2^4为例子，2^4 = (2^2)^2 = ((2^1)^2)^2
 // 如果幂是奇数，则把奇数进行拆分，拆一个出来乘即可
 // 时间复杂度，空间复杂度 都是 O(logn)
@@ -24,7 +25,7 @@ func myPow(x float64, n int) float64 {
 }
 
 // 二进制法，把n转成二进制数
-// 2^5 = 2 ^ (0101) = 平时直接累乘，碰到1则额外乘
+// 2^5 = 2 ^ (0101) = 按位数直接累乘，n缩小两倍，n末尾为1则额外乘
 // 时间复杂度是 O(logn), 空间复杂度1
 func myPow2(x float64, n int) float64 {
 	isNative := false
@@ -61,4 +62,25 @@ func myPow1(x float64, n int) float64 {
 		return 1/res
 	}
 	return res
+}
+
+// 这样也会超时, 本质上并没有缩短乘的个数，因为底数还是那么大
+func myPow3(x float64, n int) float64 {
+	if n < 0 {
+		return 1 / pow(x, -n)
+	}
+	return pow(x, n)
+}
+
+func pow(x float64, n int) float64 {
+	if n == 0 {
+		return 1
+	}
+	if n == 1 {
+		return x
+	}
+	if n % 2 == 1 {
+		return x * pow(x, n / 2) * pow(x, n / 2)
+	}
+	return pow(x, n / 2) * pow(x, n / 2)
 }
