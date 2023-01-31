@@ -23,6 +23,7 @@ func heapSort(arr []int) {
 	}
 	for i := len(arr) - 1; i > 0; i-- {
 		arr[0], arr[i] = arr[i], arr[0]
+		// 排除掉i之后的不调整
 		adjust(arr, 0, i)
 	}
 }
@@ -31,7 +32,7 @@ func heapSort(arr []int) {
 func adjust(arr []int, root int, end int) {
 	// 确定tmp的位置
 	tmp := arr[root]
-	// i 不能小于等于 end，只能小于 end
+	// i 不能小于等于 end，只能小于 end, 否则可能 i + 1 时会数组越界
 	for i := 2 * root + 1; i < end; i = 2 * i + 1 {
 		if i + 1 < end && arr[i] < arr[i + 1] {
 			i = i + 1

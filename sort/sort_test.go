@@ -26,3 +26,12 @@ func TestHeapSort(t *testing.T) {
 	heapSort(arr)
 	fmt.Println(arr)
 }
+
+func TestFindKthLargest(t *testing.T) {
+	var arr []int
+	arr = []int{3,1,2,4}
+	fmt.Println(findKthLargest(arr, 2))
+
+	arr = []int{3,2,3,1,2,4,5,5,6}
+	fmt.Println(findKthLargest(arr, 4))
+}
