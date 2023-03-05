@@ -16,6 +16,9 @@ func coinChange(coins []int, amount int) int {
 	}
 	for i := 0; i < len(coins); i++ {
 		for j := coins[i]; j <= amount; j++ {
+			if dp[j - coins[i]] == math.MaxInt64 {
+				continue
+			}
 			dp[j] = common.Min(dp[j], dp[j - coins[i]] + 1)
 		}
 	}

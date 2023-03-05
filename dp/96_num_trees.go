@@ -2,11 +2,12 @@ package dp
 
 // 递推公式：dp[i]：1到i为节点组成的二叉搜索树的个数
 // dp[i] += dp[j - 1] * dp[i - j] 表示
-// dp[以j为头结点左子树节点数量] * dp[以j为头结点右子树节点数量]
+// dp[以j为头结点左子树]的节点数量 * dp[以j为头结点右子树]的节点数量
 func numTrees(n int) int {
 	dp := make([]int, n + 1)
 	dp[0] = 1
 	for i := 1; i <= n; i++ {
+		// 枚举所有从0到i为头节点的情况
 		for j := 1; j <= i; j++ {
 			dp[i] += dp[j - 1] * dp[i - j]
 		}

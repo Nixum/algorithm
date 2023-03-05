@@ -300,3 +300,8 @@ func TestCodec(t *testing.T) {
 func TestGenerateTrees(t *testing.T) {
 	fmt.Println(generateTrees(3))
 }
+
+func TestDiameterOfBinaryTree(t *testing.T) {
+	root := CreateBinaryTree([]int{1,2,3,4,5,6})
+	fmt.Println(diameterOfBinaryTree(root))
+}
