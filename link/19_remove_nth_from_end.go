@@ -1,6 +1,24 @@
 package link
 
 func removeNthFromEnd(head *ListNode, n int) *ListNode {
+	// 因为有可能是删除整数的第一个，所以需要一个pre节点
+	h := new(ListNode)
+	h.Next = head
+	slow := h
+	fast := head
+	for n > 0 && fast != nil {
+		n--
+		fast = fast.Next
+	}
+	for fast != nil {
+		fast = fast.Next
+		slow = slow.Next
+	}
+	slow.Next = slow.Next.Next
+	return h.Next
+}
+
+func removeNthFromEnd2(head *ListNode, n int) *ListNode {
 	h := new(ListNode)
 	h.Next = head
 	p := head
@@ -20,22 +38,5 @@ func removeNthFromEnd(head *ListNode, n int) *ListNode {
 		p = p.Next
 	}
 	q.Next = q.Next.Next
-	return h.Next
-}
-
-func removeNthFromEnd2(head *ListNode, n int) *ListNode {
-	h := new(ListNode)
-	h.Next = head
-	slow := h
-	fast := head
-	for n > 0 && fast != nil {
-		n--
-		fast = fast.Next
-	}
-	for fast != nil {
-		fast = fast.Next
-		slow = slow.Next
-	}
-	slow.Next = slow.Next.Next
 	return h.Next
 }
