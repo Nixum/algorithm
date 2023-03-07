@@ -26,3 +26,25 @@ func flattenInRecursion(root *TreeNode) *TreeNode {
 	}
 	return root
 }
+
+// 其他写法，也能ac
+func flatten1(root *TreeNode)  {
+	if root == nil {
+		return
+	}
+	flatten(root.Left)
+	flatten(root.Right)
+	tmp := root.Right
+	root.Right = root.Left
+	leftTmp := root.Left
+	// left要置为nil！！
+	root.Left = nil
+	for leftTmp != nil && leftTmp.Right != nil {
+		leftTmp = leftTmp.Right
+	}
+	if leftTmp != nil {
+		leftTmp.Right = tmp
+	} else {
+		root.Right = tmp
+	}
+}

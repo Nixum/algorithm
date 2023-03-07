@@ -231,3 +231,12 @@ func TestMergeKLists(t *testing.T) {
 	link3 = NewLink([]int{2, 6})
 	Print(mergeKLists([]*ListNode{link1, link2, link3}))
 }
+
+func TestSortList(t *testing.T) {
+	var link *ListNode
+	link = NewLink([]int{3, 2, 5, 1, 4})
+	Print(sortList2(link))
+
+	//link = NewLink([]int{3, 2, 5, 1})
+	//Print(sortList2(link))
+}
