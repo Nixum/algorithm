@@ -17,6 +17,9 @@ func TraversalByPreorder(root *TreeNode) {
 }
 
 func TraversalByPreorderInIteration(root *TreeNode) []int {
+	if root == nil {
+		return []int{}
+	}
 	preorderRes = make([]int, 0)
 	stack := make([]*TreeNode, 0)
 	stack = append(stack, root)
@@ -36,6 +39,9 @@ func TraversalByPreorderInIteration(root *TreeNode) []int {
 
 // 统一风格迭代
 func TraversalByPreorderInIteration2(root *TreeNode) []int {
+	if root == nil {
+		return []int{}
+	}
 	preorderRes = make([]int, 0)
 	stack := make([]*TreeNode, 0)
 	stack = append(stack, root)

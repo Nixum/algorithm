@@ -17,6 +17,9 @@ func TraversalByInorder(root *TreeNode) {
 }
 
 func TraversalByInorderInIteration(root *TreeNode) []int {
+	if root == nil {
+		return []int{}
+	}
 	inorderRes = make([]int, 0)
 	stack := make([]*TreeNode, 0)
 	cur := root
@@ -35,6 +38,9 @@ func TraversalByInorderInIteration(root *TreeNode) []int {
 }
 
 func TraversalByInorderInIteration2(root *TreeNode) []int {
+	if root == nil {
+		return []int{}
+	}
 	inorderRes = make([]int, 0)
 	stack := make([]*TreeNode, 0)
 	stack = append(stack, root)

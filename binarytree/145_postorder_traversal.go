@@ -18,6 +18,9 @@ func TraversalByPostorder(root *TreeNode) {
 
 // 先序遍历迭代法的反转
 func TraversalByPostorderInIteration(root *TreeNode) []int {
+	if root == nil {
+		return []int{}
+	}
 	postorderRes = make([]int, 0)
 	stack := make([]*TreeNode, 0)
 	stack = append(stack, root)
@@ -44,6 +47,9 @@ func TraversalByPostorderInIteration(root *TreeNode) []int {
 
 
 func TraversalByPostorderInIteration2(root *TreeNode) []int {
+	if root == nil {
+		return []int{}
+	}
 	postorderRes = make([]int, 0)
 	stack := make([]*TreeNode, 0)
 	stack = append(stack, root)
