@@ -21,5 +21,5 @@ func isSymmetricCompare(left *TreeNode, right *TreeNode) bool {
 	}
 	outSide := isSymmetricCompare(left.Left, right.Right)
 	inSide := isSymmetricCompare(left.Right, right.Left)
-	return outSide && inSide
+	return left.Val == right.Val && outSide && inSide
 }
