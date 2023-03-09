@@ -237,6 +237,6 @@ func TestSortList(t *testing.T) {
 	link = NewLink([]int{3, 2, 5, 1, 4})
 	Print(sortList2(link))
 
-	//link = NewLink([]int{3, 2, 5, 1})
-	//Print(sortList2(link))
+	link = NewLink([]int{3, 2, 5, 1})
+	Print(sortList2(link))
 }
