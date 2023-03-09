@@ -3,12 +3,16 @@ package link
 // 时间复杂度O(n), 空间复杂度O(1)
 // 先用快慢指针找到中点，然后从中点开始反转链表 和 从头开始的节点开始比较
 func isPalindrome(head *ListNode) bool {
+	// 获取链表中点，如果是奇数个，那就中间那个
+	// 如果是偶数个，那就中线右边那个
 	slow := head
 	fast := head
 	for fast != nil && fast.Next != nil {
 		slow = slow.Next
 		fast = fast.Next.Next
 	}
+	// 写不写都可以，如果链表是奇数个，因为head没被改变，
+	// 到时left遍历最后一个也会跟right的最后一个一样
 	if fast != nil {
 		slow = slow.Next
 	}
@@ -25,6 +29,7 @@ func isPalindrome(head *ListNode) bool {
 }
 
 func reverseLinkWhenIsPalindrome(head *ListNode) *ListNode {
+	// 不用头节点的写法
 	//var pre *ListNode
 	//cur := head
 	//for cur != nil {

@@ -6,6 +6,7 @@ func reverseKGroup(head *ListNode, k int) *ListNode {
 	}
 	a, b := head, head
 	for i := 0; i < k; i++ {
+		// 如果不够k个一组不用处理
 		if b == nil {
 			return head
 		}
