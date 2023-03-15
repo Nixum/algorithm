@@ -39,3 +39,7 @@ func TestRangeSumQuery2d(t *testing.T) {
 	fmt.Println(s.SumRegion(2, 1, 4, 3))
 	fmt.Println(s.SumRegion(1, 2, 2, 4))
 }
+
+func TestProductExceptSelf(t *testing.T) {
+	fmt.Println(productExceptSelf2([]int{1,2,3,4}))
+}
