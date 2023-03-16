@@ -39,3 +39,7 @@ func TestPreimageSizeFZF(t *testing.T) {
 	fmt.Println(preimageSizeFZF(3))
 	fmt.Println(preimageSizeFZF(1000000000))
 }
+
+func TestSearchMatrix2(t *testing.T) {
+	fmt.Println(searchMatrix2([][]int{{1,3}}, 3))
+}
