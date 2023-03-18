@@ -161,3 +161,34 @@ func TestMakeSquare(t *testing.T) {
 	arr = []int{1,2,3,4,5,6,7,8,9,10,11,12,13,14,15}
 	fmt.Println(makesquare(arr))
 }
+
+func TestExist(t *testing.T) {
+	board := [][]byte{}
+	board = [][]byte{
+		{'A', 'B', 'C', 'E'},
+		{'S', 'F', 'C', 'S'},
+		{'A', 'D', 'E', 'E'},
+	}
+	fmt.Println(exist(board, "ABCB"))
+
+	board = [][]byte{
+		{'A'},
+	}
+	fmt.Println(exist(board, "A"))
+
+	board = [][]byte{
+		{'A','B','C','E'},
+		{'S','F','C','S'},
+		{'A','D','E','E'},
+	}
+	fmt.Println(exist(board, "SEE"))
+
+	board = [][]byte{
+		{'b'},
+		{'a'},
+		{'b'},
+		{'b'},
+		{'a'},
+	}
+	fmt.Println(exist(board, "baa"))
+}

@@ -83,3 +83,9 @@ func TestRotate(t *testing.T) {
 	rotate(matrix)
 	fmt.Println(matrix)
 }
+
+func TestNextPermutation(t *testing.T) {
+	nums := []int{1,2,3}
+	nextPermutation(nums)
+	fmt.Println(nums)
+}
