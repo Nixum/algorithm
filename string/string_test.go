@@ -82,3 +82,11 @@ func TestMyAtoi(t *testing.T) {
 	fmt.Println(myAtoi("words and 987")) // 0
 	fmt.Println(myAtoi("-91283472332")) // -2147483648
 }
+
+func TestDecodeString(t *testing.T) {
+	fmt.Println(decodeString("3[a]2[bc]"))
+	fmt.Println(decodeString("3[a2[c]]"))
+	fmt.Println(decodeString("2[abc]3[cd]ef"))
+	fmt.Println(decodeString("abc3[cd]xyz"))
+	fmt.Println(decodeString("10[lc]"))
+}

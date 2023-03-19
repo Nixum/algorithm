@@ -313,3 +313,22 @@ func TestPathSumIII(t *testing.T) {
 	root = CreateBinaryTree([]int{10,5,-3,3,2,-1,11,3,-2,-1,1})
 	fmt.Println(pathSumIII(root, 8))
 }
+
+func TestPrefixTree(t *testing.T) {
+	tree := PrefixTreeConstructor()
+	tree.Insert("apple")
+	fmt.Println(tree.Search("apple"))
+	fmt.Println(tree.Search("app"))
+
+	tree = PrefixTreeConstructor()
+	fmt.Println(tree.StartsWith("a"))
+
+	tree = PrefixTreeConstructor()
+	tree.Insert("hello")
+	fmt.Println(tree.Search("hell"))
+	fmt.Println(tree.Search("helloa"))
+	fmt.Println(tree.Search("hello"))
+	fmt.Println(tree.StartsWith("hell"))
+	fmt.Println(tree.StartsWith("helloa"))
+	fmt.Println(tree.StartsWith("hello"))
+}

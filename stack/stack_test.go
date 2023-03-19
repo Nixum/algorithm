@@ -37,3 +37,14 @@ func TestMyQueue(t *testing.T)  {
 	fmt.Println(s.Pop())
 	fmt.Println(s.Empty())
 }
+
+func TestMinStack(t *testing.T)  {
+	stack := Constructor()
+	stack.Push(0)
+	stack.Push(1)
+	stack.Push(0)
+	fmt.Println(stack.GetMin())
+	stack.Pop()
+	fmt.Println(stack.Top())
+	fmt.Println(stack.GetMin())
+}

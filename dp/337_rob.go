@@ -26,7 +26,7 @@ func robInTree(root *TreeNode) [2]int {
 	resRight := robInTree(root.Right)
 	res := [2]int{
 		// 偷
-		root.Val + resLeft[0] + resRight[0],
+		root.Val + resLeft[1] + resRight[1],
 		// 不偷，从左右孩子里取最大值
 		common.Max(resLeft[0], resLeft[1]) + common.Max(resRight[0], resRight[1]),
 	}
