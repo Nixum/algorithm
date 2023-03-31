@@ -1,24 +1,27 @@
 package slide_window
 
 import (
+	"algorithm/common"
 	"math"
 )
 
 func maxSlidingWindow(nums []int, k int) []int {
 	res := make([]int, 0)
-	drabList := initList()
+	drabList := make([]int, 0)
 	left, right, valid := 0, 0, 0
 	for right < len(nums) {
 		n := nums[right]
 		right++
-		drabList.push(n)
+		drabList = pushInMaxSlidingWindow(drabList, n)
 		valid++
 		if valid == k {
-			res = append(res, drabList.top())
+			if max, exist := topInMaxSlidingWindow(drabList); exist {
+				res = append(res, max)
+			}
 			m := nums[left]
 			// AC这道题很关键的地方，当left缩进的时候，
 			// 要把当前最大值给弹出，否则可能在下一轮里无法得到窗口内的最大值
-			drabList.pop(m) // ！！！
+			drabList = popInMaxSlidingWindow(drabList, m) // ！！！
 			left++
 			valid--
 		}
@@ -26,46 +29,61 @@ func maxSlidingWindow(nums []int, k int) []int {
 	return res
 }
 
-type drabIncrList struct {
-	nums []int
-	n int
-}
-
-func initList() drabIncrList {
-	return drabIncrList{
-		nums: make([]int, 0),
-		n: 0,
+// 单调队列，单调递减
+func pushInMaxSlidingWindow(q []int, n int) []int {
+	if len(q) == 0 {
+		q = append(q, n)
+		return q
 	}
-}
-
-func (list *drabIncrList) push(a int) {
-	if len(list.nums) == 0 {
-		list.nums = append(list.nums, a)
-		list.n++
-		return
+	// 每次有新值进来，就把队列里比他小的除掉
+	for len(q) - 1 >= 0 && q[len(q)-1] < n {
+		q = q[:len(q)-1]
 	}
-	// 保证单调递增, 每次有新值进来，就把队列里比他小的除掉
-	for list.n > 0 && list.nums[list.n - 1] < a {
-		list.nums = list.nums[0: list.n - 1]
-		list.n--
+	q = append(q, n)
+	return q
+}
+
+func topInMaxSlidingWindow(q []int) (int, bool) {
+	if len(q) == 0 {
+		return -1, false
 	}
-	list.nums = append(list.nums, a)
-	list.n++
+	return q[0], true
 }
 
-func (list *drabIncrList) top() int {
-	return list.nums[0]
+func popInMaxSlidingWindow(q []int, n int) []int {
+	if len(q) == 0 {
+		return q
+	}
+	if q[0] == n {
+		q = q[1:]
+	}
+	return q
 }
 
-func (list *drabIncrList) pop(a int) {
-	if list.nums[0] == a {
-		if list.n > 1 {
-			list.nums = list.nums[1: list.n]
-		} else {
-			list.nums = list.nums[0:0]
+// 思路没错，但是超时了，
+func maxSlidingWindow4(nums []int, k int) []int {
+	left := 0
+	right := 0
+	res := make([]int, 0)
+	max := math.MinInt64
+	for right < len(nums) {
+		n := nums[right]
+		if max < n {
+			max = n
 		}
-		list.n--
+		if right - left + 1 == k {
+			res = append(res, max)
+			if nums[left] == max {
+				max = math.MinInt64
+				for i := left+1; i <= right; i++ {
+					max = common.Max(max, nums[i])
+				}
+			}
+			left++
+		}
+		right++
 	}
+	return res
 }
 
 // 错误的思路，这样每次都变成了取最大值了
