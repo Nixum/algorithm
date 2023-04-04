@@ -134,3 +134,11 @@ func TestMaxProduct(t *testing.T) {
 	nums = []int{-2,0,-1}
 	fmt.Println(maxProduct(nums))
 }
+
+func TestIsMatch(t *testing.T) {
+	fmt.Println(isMatch("aab", "c*a*b"))
+	fmt.Println(isMatch("aa", "a"))
+	fmt.Println(isMatch("aa", "a*"))
+	fmt.Println(isMatch("aa", ".*"))
+	fmt.Println(isMatch("ab", ".*"))
+}

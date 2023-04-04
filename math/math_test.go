@@ -57,3 +57,9 @@ func TestGenerate(t *testing.T) {
 	fmt.Println(generate(5))
 	fmt.Println(generate(1))
 }
+
+func TestFindMedianSortedArrays(t *testing.T) {
+	arr1 := []int{}
+	arr2 := []int{3}
+	fmt.Println(findMedianSortedArrays(arr1, arr2))
+}
