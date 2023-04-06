@@ -13,3 +13,7 @@ func TestTrap(t *testing.T) {
 	nums = []int{4,2,0,3,2,5}
 	fmt.Println(trap(nums))
 }
+
+func TestLargestRectangleArea(t *testing.T) {
+	fmt.Println(calcInMaximalRectangle([]int{2,1,5,6,2,3}))
+}

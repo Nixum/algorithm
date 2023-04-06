@@ -90,3 +90,8 @@ func TestDecodeString(t *testing.T) {
 	fmt.Println(decodeString("abc3[cd]xyz"))
 	fmt.Println(decodeString("10[lc]"))
 }
+
+func TestIsPalindrome(t *testing.T) {
+	//fmt.Println(isPalindrome("A man, a plan, a canal: Panama"))
+	fmt.Println(isPalindrome("0P"))
+}

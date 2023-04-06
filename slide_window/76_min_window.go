@@ -1,7 +1,5 @@
 package slide_window
 
-import "math"
-
 func minWindow(s string, t string) string {
 	if s == t {
 		return s
@@ -13,12 +11,12 @@ func minWindow(s string, t string) string {
 	for i := 0; i < len(t); i++ {
 		need[t[i]]++
 	}
+	window := make(map[byte]int)
 	valid := 0
 	right := 0
 	left := 0
-	start := 0
-	min := math.MaxInt64
-	window := make(map[byte]int)
+
+	str := ""
 	for right < len(s) {
 		c := s[right]
 		if _, exist := need[c]; exist {
@@ -29,9 +27,8 @@ func minWindow(s string, t string) string {
 		}
 		right++
 		for valid == len(need) {
-			if right - left < min {
-				start = left
-				min = right - left
+			if len(str) == 0 || len(str) > (right-left) {
+				str = s[left:right]
 			}
 			d := s[left]
 			left++
@@ -42,14 +39,6 @@ func minWindow(s string, t string) string {
 				window[d]--
 			}
 		}
-	}
-	if min == math.MaxInt64 {
-		return ""
-	}
-	str := ""
-	for i := 0; i < min; i++ {
-		str += string(s[start])
-		start++
 	}
 	return str
 }
