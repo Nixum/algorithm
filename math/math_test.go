@@ -63,3 +63,8 @@ func TestFindMedianSortedArrays(t *testing.T) {
 	arr2 := []int{3}
 	fmt.Println(findMedianSortedArrays(arr1, arr2))
 }
+
+func TestIsHappy(t *testing.T) {
+	fmt.Println(isHappy(1))
+	fmt.Println(isHappy(19))
+}
