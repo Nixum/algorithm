@@ -1,5 +1,7 @@
 package string
 
+import "strconv"
+
 func convertToTitle(columnNumber int) string {
 	res := ""
 	for columnNumber != 0 {
@@ -8,7 +10,7 @@ func convertToTitle(columnNumber int) string {
 		// 所以要-1，变成[0,25]
 		columnNumber--
 		c := columnNumber % 26
-		res += string('A' + c)
+		res += strconv.Itoa('A' + c)
 		columnNumber /= 26
 	}
 	str := ""
