@@ -68,3 +68,13 @@ func TestIsHappy(t *testing.T) {
 	fmt.Println(isHappy(1))
 	fmt.Println(isHappy(19))
 }
+
+func TestReverse(t *testing.T) {
+	fmt.Println(reverse(-10))
+	fmt.Println(reverse(-190))
+}
+
+func TestDivide(t *testing.T) {
+	fmt.Println(divide(10, 3))
+	fmt.Println(divide(7, -3))
+}

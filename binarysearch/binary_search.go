@@ -16,6 +16,8 @@ func BinarySearch(nums []int, t int) int {
 	return -1
 }
 
+// 要注意的一个点是，因为 除法是向下取整，当i要等于mid时，
+// 可能会导致死循环，所以 要不就使用 mid = (l+r+1)/2, 要不就 j=mid，i=mid+1
 func BinarySearch2(nums []int, t int) int{
 	i := 0
 	j := len(nums)
