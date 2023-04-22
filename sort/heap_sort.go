@@ -37,6 +37,7 @@ func adjust(arr []int, root int, end int) {
 		if i + 1 < end && arr[i] < arr[i + 1] {
 			i = i + 1
 		}
+		// 本质上是确定tmp的位置
 		if tmp < arr[i] {
 			arr[root] = arr[i]
 			root = i

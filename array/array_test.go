@@ -89,3 +89,16 @@ func TestNextPermutation(t *testing.T) {
 	nextPermutation(nums)
 	fmt.Println(nums)
 }
+
+func TestIntersection1(t *testing.T) {
+	nums1 := []int{1,1,2,2}
+	nums2 := []int{2,2}
+	fmt.Println(intersection1(nums1, nums2))
+}
+
+func TestRotate1(t *testing.T) {
+	var nums []int
+	nums = []int{1,2,3,4,5,6,7}
+	rotate1(nums, 3)
+	fmt.Println(nums)
+}
